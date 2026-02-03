@@ -1,0 +1,139 @@
+@import "tailwindcss";
+
+@theme {
+  /* Permanent dark mode colors - Ambient Studio base */
+  --color-background: #0A0A0A; /* Rich dark charcoal for studio atmosphere */
+  --color-foreground: hsl(0 0% 98%);
+  --color-card: hsl(0 0% 6%);
+  --color-card-foreground: hsl(0 0% 98%);
+  --color-popover: hsl(0 0% 6%);
+  --color-popover-foreground: hsl(0 0% 98%);
+  --color-primary: hsl(0 0% 98%);
+  --color-primary-foreground: hsl(0 0% 9%);
+  --color-secondary: hsl(0 0% 12%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+  --color-muted: hsl(0 0% 12%);
+  --color-muted-foreground: hsl(0 0% 63.9%);
+  --color-accent: hsl(30 52% 64%); /* Muted Sand/Gold #D4A373 */
+  --color-accent-foreground: hsl(0 0% 100%);
+  --color-destructive: hsl(0 62.8% 30.6%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-border: hsl(0 0% 14.9%);
+  --color-input: hsl(0 0% 14.9%);
+  --color-ring: hsl(0 0% 83.1%);
+
+  /* Border radius */
+  --radius-lg: 1rem;
+  --radius-md: 0.5rem;
+  --radius-sm: 0.25rem;
+}
+
+/* Retro Grid animation */
+@keyframes grid-animation {
+  from { transform: translateY(0); }
+  to { transform: translateY(calc(var(--grid-size) * 2)); }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 4%; /* Rich dark charcoal #0A0A0A */
+    --foreground: 0 0% 100%;
+    /* Muted Sand/Gold (#D4A373) */
+    --accent: 30 52% 64%;
+    --accent-foreground: 0 0% 100%;
+  }
+
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  /* Media defaults */
+  img,
+  picture,
+  video,
+  canvas,
+  svg {
+    display: block;
+    max-width: 100%;
+  }
+
+  /* Form elements inherit fonts */
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  /* Text overflow handling */
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    overflow-wrap: break-word;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  /* Stacking context */
+  #root,
+  #__next {
+    isolation: isolate;
+  }
+}
+
+@layer utilities {
+  .animate-grid {
+    animation: grid-animation var(--duration) linear infinite;
+  }
+
+  /* Hide scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
