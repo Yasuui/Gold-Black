@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css"
 
 /**
@@ -51,6 +52,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} max-w-full overflow-x-hidden`}>
       <body className="bg-[#0A0A0A] text-foreground antialiased max-w-full overflow-x-hidden">
         {children}
+        <SpeedInsights />
         {/* Global "Leather" Texture - soft-light prevents corner distortion */}
         <div
           aria-hidden="true"
