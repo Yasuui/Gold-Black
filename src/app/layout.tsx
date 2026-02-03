@@ -15,20 +15,26 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Yonis Diriye | Full-Stack Developer",
-  description: "A premium, minimalist portfolio showcasing full-stack development projects and skills.",
+  title: "Diriye | Systems Architect",
+  description:
+    "High-fidelity systems architecture and full-stack engineering. Building resilient digital infrastructure with a minimalist aesthetic.",
+  metadataBase: new URL("https://diriye.ca"),
   keywords: ["portfolio", "developer", "full-stack", "react", "next.js", "typescript"],
   authors: [{ name: "Yonis Diriye" }],
   openGraph: {
-    title: "Yonis Diriye | Full-Stack Developer",
-    description: "A premium, minimalist portfolio showcasing full-stack development projects and skills.",
+    title: "Diriye | Systems Architect",
+    description:
+      "High-fidelity systems architecture and full-stack engineering. Building resilient digital infrastructure with a minimalist aesthetic.",
     type: "website",
     locale: "en_US",
+    images: [{ url: "/opengraph-image.png" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Yonis Diriye | Full-Stack Developer",
-    description: "A premium, minimalist portfolio showcasing full-stack development projects and skills.",
+    title: "Diriye | Systems Architect",
+    description:
+      "High-fidelity systems architecture and full-stack engineering. Building resilient digital infrastructure with a minimalist aesthetic.",
+    images: ["/opengraph-image.png"],
   },
   robots: {
     index: true,
