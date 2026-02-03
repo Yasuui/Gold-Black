@@ -2,7 +2,7 @@ import { HeroSection, ProjectsSection, SkillsSection, ContactSection, DotPattern
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#0A0A0A]">
+    <main className="relative min-h-screen bg-[#0A0A0A] max-w-full overflow-x-hidden">
       {/* === AMBIENT STUDIO BACKGROUND SYSTEM === */}
       
       {/* Base Layer: Rich dark charcoal */}

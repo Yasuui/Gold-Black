@@ -334,7 +334,7 @@ export function ContactSection({ className }: ContactSectionProps) {
         WebkitMaskImage: "linear-gradient(to bottom, transparent, black 10%, black 100%)",
       }}
     >
-      <div className="container mx-auto px-6">
+      <div className="container mx-auto px-6 md:px-20">
         {/* Section Header - Standardized with Work section */}
         <motion.div
           className="mb-12 lg:mb-16"
@@ -345,7 +345,7 @@ export function ContactSection({ className }: ContactSectionProps) {
         >
           <div className="flex items-baseline gap-4 mb-4">
             <span className="text-xs font-mono text-[#D4A373] tracking-wider">03 //</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight whitespace-nowrap">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight whitespace-nowrap">
               Connect
             </h2>
           </div>
@@ -373,7 +373,7 @@ export function ContactSection({ className }: ContactSectionProps) {
             </MagneticWrapper>
 
             {/* Row 2: X (Left) | Telegram (Right) - Secondary */}
-            <div className="grid grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <MagneticWrapper strength={0.2}>
                 <ContactCard
                   icon={<XLogoIcon />}
@@ -402,16 +402,16 @@ export function ContactSection({ className }: ContactSectionProps) {
           </div>
 
           {/* Right Column - Globe Visual (on mobile: order-2 = below cards) */}
-          <div className="relative order-2">
+          <div className="relative order-2 overflow-hidden">
             {/* Globe + HUD labels - vertical scope, rock-steady, clinical */}
-            <div className="flex flex-col items-center py-4">
+            <div className="flex flex-col items-center py-4 gap-6">
               {/* Top Label - Toronto (stand out) */}
-              <span className="text-xs font-mono font-medium tracking-[0.25em] uppercase text-white/80 mb-6 text-center">
+              <span className="text-xs font-mono font-medium tracking-[0.25em] uppercase text-white/80 text-center">
                 TORONTO, ONTARIO
               </span>
 
               {/* Globe wrapper with warm ambient wash */}
-              <div className="relative w-full max-w-[350px] md:max-w-[450px] lg:max-w-[500px] aspect-square">
+              <div className="relative w-full max-w-[280px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-[500px] aspect-square">
                 {/* Warm Ambient Wash - diffused, no flashlight */}
                 <div
                   className="absolute inset-0 z-[-1] pointer-events-none w-[150%] h-[150%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-soft-light"
@@ -431,7 +431,7 @@ export function ContactSection({ className }: ContactSectionProps) {
               </div>
 
               {/* Bottom Label - Gold pill */}
-              <div className="inline-flex items-center border border-[#D4A373]/50 rounded-full px-4 py-2 bg-[#D4A373]/5 backdrop-blur-sm mt-6">
+              <div className="inline-flex items-center border border-[#D4A373]/50 rounded-full px-4 py-2 bg-[#D4A373]/5 backdrop-blur-sm">
                 <span className="text-[10px] font-mono tracking-[0.2em] uppercase text-[#D4A373]">
                   [ STATUS ]: AVAILABLE FOR SYSTEMS ARCHITECTURE
                 </span>

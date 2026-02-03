@@ -44,7 +44,7 @@ export function SkillsSection({ className }: SkillsSectionProps) {
         WebkitMaskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
       }}
     >
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-6 md:px-20">
         {/* Section Header - Left aligned with section number */}
         <motion.div
           className="mb-12 lg:mb-16"
@@ -62,7 +62,7 @@ export function SkillsSection({ className }: SkillsSectionProps) {
           
           <div className="flex items-baseline gap-4 mb-4">
             <span className="text-xs font-mono text-[#D4A373] tracking-wider">01 //</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight whitespace-nowrap">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight whitespace-nowrap">
               Skills
             </h2>
           </div>
@@ -117,11 +117,11 @@ export function SkillsSection({ className }: SkillsSectionProps) {
                 gradientSize={300}
                 borderColor="rgba(212, 163, 115, 0.2)"
               >
-                <div className="h-full p-6">
+                <div className="h-full p-6 sm:p-7">
                   <h3 className="text-xl font-medium text-accent mb-4">
                     Development
                   </h3>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {developmentCategories.map((category) => (
                       <div key={category.id}>
                         <h4 className="text-sm font-medium text-accent/80 mb-3">
@@ -160,11 +160,11 @@ export function SkillsSection({ className }: SkillsSectionProps) {
                 gradientSize={300}
                 borderColor="rgba(212, 163, 115, 0.2)"
               >
-                <div className="h-full p-6">
+                <div className="h-full p-6 sm:p-7">
                   <h3 className="text-xl font-medium text-accent mb-4">
                     Operations & Design
                   </h3>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {operationsDesignCategories.map((category) => (
                       <div key={category.id}>
                         <h4 className="text-sm font-medium text-accent/80 mb-3">

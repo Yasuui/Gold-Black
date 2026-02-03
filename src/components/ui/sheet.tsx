@@ -53,19 +53,19 @@ export function Sheet({ open, onOpenChange, children, className }: SheetProps) {
             onClick={() => onOpenChange(false)}
           />
 
-          {/* Sheet Panel - Viewport locked, highest z-index */}
+          {/* Sheet Panel - Responsive drawer */}
           <motion.div
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", damping: 30, stiffness: 300 }}
             className={cn(
-              // Viewport-locked positioning
-              "fixed inset-y-0 right-0 z-[200]",
-              "h-screen w-full sm:max-w-xl",
-              // Glassmorphism with grain peek-through
+              "fixed inset-x-0 bottom-0 top-auto z-[200]",
+              "h-[85vh] w-full max-w-full sm:h-screen sm:inset-y-0 sm:right-0 sm:left-auto sm:bottom-auto",
+              "sm:max-w-xl md:max-w-2xl lg:max-w-3xl",
               "bg-[#0a0a0a]/95 backdrop-blur-xl",
-              "border-l border-[#D4A373]/20",
+              "border border-[#D4A373]/20 sm:border-0 sm:border-l sm:border-[#D4A373]/20",
+              "rounded-t-3xl sm:rounded-none",
               "shadow-2xl shadow-black/50",
               "flex flex-col",
               className

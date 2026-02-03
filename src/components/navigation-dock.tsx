@@ -29,12 +29,15 @@ export function NavigationDock({ className }: NavigationDockProps) {
         "fixed bottom-6 left-1/2 -translate-x-1/2 z-50",
         className
       )}
+      style={{
+        bottom: "calc(env(safe-area-inset-bottom, 0px) + 1.5rem)",
+      }}
     >
       <Dock
         iconSize={40}
         iconMagnification={56}
         iconDistance={120}
-        className="bg-[#121212]/60 backdrop-blur-md border-[#D4A373]/20 shadow-lg shadow-[#D4A373]/10"
+        className="bg-[#121212]/60 backdrop-blur-md border-[#D4A373]/20 shadow-lg shadow-[#D4A373]/10 px-2 py-1"
       >
         {navItems.map((item) => (
           <DockIcon key={item.href}>

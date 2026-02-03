@@ -194,7 +194,7 @@ export function ProjectsSection({ className }: ProjectsSectionProps) {
         WebkitMaskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
       }}
     >
-      <div className="relative z-10 container mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-6 md:px-20">
         {/* Section Header - Left aligned with section number */}
         <motion.div
           className="mb-12 lg:mb-16"
@@ -205,7 +205,7 @@ export function ProjectsSection({ className }: ProjectsSectionProps) {
         >
           <div className="flex items-baseline gap-4 mb-4">
             <span className="text-xs font-mono text-[#D4A373] tracking-wider">02 //</span>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight whitespace-nowrap">
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-medium text-white tracking-tight whitespace-nowrap">
               Work
             </h2>
           </div>

@@ -50,6 +50,8 @@
   html {
     scroll-behavior: smooth;
     color-scheme: dark;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   body {
@@ -59,6 +61,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    max-width: 100%;
+    overflow-x: hidden;
   }
 
   /* Reset */
@@ -119,6 +123,32 @@
   #root,
   #__next {
     isolation: isolate;
+  }
+}
+
+/* Custom Gold Scrollbar - desktop only to preserve native rubber-banding on touch devices */
+@media (hover: hover) and (pointer: fine) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #D4A373 #0A0A0A;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0A0A0A;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #D4A373;
+    border-radius: 10px;
+    border: 2px solid #0A0A0A;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #E5B98A;
   }
 }
 

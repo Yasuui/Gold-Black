@@ -15,14 +15,14 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "Diriye | Systems Architect",
+  title: "Yonis Diriye | FS Developer",
   description:
     "High-fidelity systems architecture and full-stack engineering. Building resilient digital infrastructure with a minimalist aesthetic.",
   metadataBase: new URL("https://diriye.ca"),
   keywords: ["portfolio", "developer", "full-stack", "react", "next.js", "typescript"],
   authors: [{ name: "Yonis Diriye" }],
   openGraph: {
-    title: "Diriye | Systems Architect",
+    title: "Yonis Diriye | FS Developer",
     description:
       "High-fidelity systems architecture and full-stack engineering. Building resilient digital infrastructure with a minimalist aesthetic.",
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Diriye | Systems Architect",
+    title: "Yonis Diriye | FS Developer",
     description:
       "High-fidelity systems architecture and full-stack engineering. Building resilient digital infrastructure with a minimalist aesthetic.",
     images: ["/opengraph-image.png"],
@@ -48,8 +48,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className="bg-[#0A0A0A] text-foreground antialiased">
+    <html lang="en" className={`${inter.variable} max-w-full overflow-x-hidden`}>
+      <body className="bg-[#0A0A0A] text-foreground antialiased max-w-full overflow-x-hidden">
         {children}
         {/* Global "Leather" Texture - soft-light prevents corner distortion */}
         <div
