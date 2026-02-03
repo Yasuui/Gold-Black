@@ -58,7 +58,7 @@ function highlightKeywords(text: string): React.ReactNode {
 }
 
 interface TerminalLine {
-  type: "command" | "response"
+  type: "command" | "response" | "shell" | "identity"
   text: string
   delay?: number
 }
@@ -125,18 +125,11 @@ export function TypewriterTerminal({
     }
   }, [currentLineIndex, currentCharIndex, lines, typeSpeed, lineDelay])
 
-  // Auto-scroll to bottom
-  useEffect(() => {
-    if (terminalRef.current) {
-      terminalRef.current.scrollTop = terminalRef.current.scrollHeight
-    }
-  }, [displayedLines])
-
   return (
     <div
       ref={terminalRef}
       className={cn(
-        "font-mono text-sm leading-relaxed overflow-y-auto",
+        "font-mono text-[10px] sm:text-xs md:text-sm leading-relaxed overflow-hidden whitespace-pre-wrap break-words max-w-full",
         className
       )}
     >
@@ -162,6 +155,22 @@ export function TypewriterTerminal({
                     <span className="inline-block w-2 h-4 bg-[#D4A373] ml-0.5 align-middle animate-pulse" />
                   )}
                 </span>
+              </div>
+            ) : line.type === "shell" ? (
+              <div className="flex items-start gap-2">
+                <span className="text-[#D4A373]">
+                  {displayText}
+                  {isCurrentLine && isTyping && showCursor && (
+                    <span className="inline-block w-2 h-4 bg-[#D4A373] ml-0.5 align-middle animate-pulse" />
+                  )}
+                </span>
+              </div>
+            ) : line.type === "identity" ? (
+              <div className={cn("pl-4 text-[#D4A373] font-medium", "whitespace-nowrap md:whitespace-normal", "text-[11px] md:text-inherit")}>
+                {displayText}
+                {isCurrentLine && isTyping && showCursor && (
+                  <span className="inline-block w-2 h-4 bg-[#D4A373] ml-0.5 align-middle animate-pulse" />
+                )}
               </div>
             ) : (
               <div className="pl-4 text-neutral-400">
@@ -193,6 +202,8 @@ export function TypewriterTerminal({
 
 // Pre-defined terminal content - System Boot Sequence
 export const aboutTerminalLines: TerminalLine[] = [
+  { type: "shell", text: "[ $ ] whoami", delay: 500 },
+  { type: "identity", text: "Yonis Diriye", delay: 500 },
   { type: "command", text: "init system --target=production", delay: 500 },
   { type: "response", text: "[OK] Loading modules: Next.js, TypeScript, Cloud Architecture...", delay: 600 },
   { type: "response", text: "[INFO] Optimizing for: High-Performance, Scalability, UX Precision.", delay: 600 },

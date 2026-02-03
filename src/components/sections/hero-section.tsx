@@ -14,18 +14,18 @@ export function HeroSection({ className }: HeroSectionProps) {
     <section
       id="home"
       className={cn(
-        "relative min-h-screen flex items-center justify-center",
+        "relative min-h-screen flex items-center justify-center overflow-hidden",
         className
       )}
     >
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 pt-16 pb-20 lg:pt-20">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 md:px-12 pt-16 pb-20 lg:pt-20">
         {/* Two-column layout - Terminal left, CTA right */}
         {/* Content centered with max-w-6xl to align with section content below */}
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16 w-full max-w-6xl mx-auto">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-16 w-full max-w-6xl mx-auto">
           
           {/* Terminal Preview - System Boot Sequence */}
-          <div className="flex-1 max-w-2xl w-full order-2 lg:order-1">
+          <div className="flex-1 max-w-2xl w-full order-2 lg:order-1 overflow-hidden">
             {/* Outer Wrapper: Physical track for beam + isolation for stacking context */}
             <div className="relative p-[2px] rounded-xl bg-neutral-900/20 overflow-hidden isolate shadow-minimal-glow hover:-translate-y-1 transition-transform duration-300">
               {/* BorderBeam at z-0 - high-contrast gold beam */}
@@ -62,14 +62,14 @@ export function HeroSection({ className }: HeroSectionProps) {
           {/* Hero Right Side - Executive CTA */}
           <div className="flex-1 text-center lg:text-left order-1 lg:order-2">
             {/* Main Headline - Large, confident */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-medium tracking-tighter text-white mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium tracking-tight text-white mb-4">
               Engineering
               <br />
               <span className="text-accent">Precision.</span>
             </h1>
             
             {/* Value Proposition Subtext */}
-            <p className="text-lg md:text-xl font-light text-neutral-400 max-w-lg mb-8">
+            <p className="text-base md:text-lg font-light text-neutral-400 max-w-lg mb-8">
               Building resilient digital ecosystems for government, enterprise, and high-growth startups.
             </p>
 
